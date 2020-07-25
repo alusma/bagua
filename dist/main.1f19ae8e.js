@@ -120,7 +120,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"main.js":[function(require,module,exports) {
 var html = document.querySelector("#html");
 var style = document.querySelector("#style");
-var string = "\n/*\u4F60\u597D\uFF0C\u6211\u662F\u4E00\u540D\u524D\u7AEF\u65B0\u4EBA\n\u63A5\u4E0B\u91CC\u6211\u8981\u6DFB\u52A0\u6837\u5F0F\u4E86*/\n#div1{\n    border:1px solid red;\n    width:400px;\n    height:400px;\n}\n/*\u63A5\u4E0B\u6765\u6211\u8981\u628Adiv\u53D8\u6210\u4E00\u4E2A\u516B\u5366\u56FE\n*\u6CE8\u610F\u770B\u597D\u4E86\n*\u9996\u5148\uFF0C\u628Adiv\u53D8\u6210\u4E00\u4E2A\u5706\n*/\n#div1{\n    border-radius: 50%;\n    box-shadow: 0 0 3px rgba(0,0,0,0.5);\n    border:none;\n}\n/*\n*\u6CE8\u5165\u9ED1\u767D\u989C\u8272\n*/\n#div1{\n    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);\n}\n/*\u6CE8\u5165\u7075\u9B42*/\n#div1::before{\n    width:200px;\n    height:200px;\n    border-radius:50%;\n    top:0px;\n    left:50%;\n    transform:translateX(-50%);\n    background:#000;\n    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%);\n}\n#div1::after{\n    width:200px;\n    height:200px;\n    border-radius:50%;\n    bottom:0px;\n    left:50%;\n    transform:translateX(-50%);\n    background:#fff;\n    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%);\n}\n\n"; //demo.innerHTML = string.substring(0, n); //让字符从0到n显示
+var string = "\n/*\u5982\u4F55  \u5236\u4F5C\u592A\u6781\u4E24\u4EEA\u56FE\n\u4F5B\u8BF4\u5F97\u5148\u6709\u4E2A\u6C60*/\n#div1{\n  width:300px;\n  height:300px;\n    border-radius: 50%;\n    box-shadow: 0 0 30px rgba(0,0,0,0.5);\n}\n/*\n*\u653E\u9C7C\u8FDB\u6C60\n\n*/\n#div1{\n    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);\n}\n\n/*\n\u597D\u4E86\uFF0C\u5F00\u59CB\u6CE8\u5165\u7075\u9B42\n*\uFF08\u7075\u9B42\u62F7\u95EE\uFF1A\u662F\u5148\u6709\u9ED1\u9C7C\u8FD8\u662F\u5148\u6709\u767D\u9C7C\u5462\uFF1F\uFF09\n*/\n#div1::before,\n#div1::after{\n    width:150px;\n    height:150px;\n    border-radius:50%;\n    left:50%;\n    transform:translateX(-50%);\n    \n}\n#div1::before{\n  top:0px;\n  background:#000;\n    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%);\n}\n#div1::after{\n  bottom:0px;\n  background:#fff;\n  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%);\n}\n\n/* \u8FD9\u4FE9\u9C7C\u4F3C\u4E4E\u6709\u70B9\u5446\n*\u90A3\u5C31\u8BA9\u5B83\u6D3B\u8D77\u6765\u5427\n*/\n@keyframes rotation {\n    0% {transform:rotate(0deg);}\n    100% {transform:rotate(360deg);}\n}\n\n"; //demo.innerHTML = string.substring(0, n); //让字符从0到n显示
 //string = string.replace(/\n/g, "<br>"); //将所有空格换成换行
 
 var string2 = "";
@@ -146,7 +146,7 @@ var step = function step() {
       n += 1;
       step();
     }
-  }, 0);
+  }, 30);
 };
 
 step();

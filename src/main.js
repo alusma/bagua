@@ -2,48 +2,52 @@ let html = document.querySelector("#html");
 let style = document.querySelector("#style");
 
 let string = `
-/*你好，我是一名前端新人
-接下里我要添加样式了*/
+/*如何  制作太极两仪图
+佛说得先有个池*/
 #div1{
-    border:1px solid red;
-    width:400px;
-    height:400px;
-}
-/*接下来我要把div变成一个八卦图
-*注意看好了
-*首先，把div变成一个圆
-*/
-#div1{
+  width:300px;
+  height:300px;
     border-radius: 50%;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
-    border:none;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 /*
-*注入黑白颜色
+*放鱼进池
+
 */
 #div1{
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
 }
-/*注入灵魂*/
-#div1::before{
-    width:200px;
-    height:200px;
+
+/*
+好了，开始注入灵魂
+*（灵魂拷问：是先有黑鱼还是先有白鱼呢？）
+*/
+#div1::before,
+#div1::after{
+    width:150px;
+    height:150px;
     border-radius:50%;
-    top:0px;
     left:50%;
     transform:translateX(-50%);
-    background:#000;
+    
+}
+#div1::before{
+  top:0px;
+  background:#000;
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%);
 }
 #div1::after{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    bottom:0px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#fff;
-    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%);
+  bottom:0px;
+  background:#fff;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%);
+}
+
+/* 这俩鱼似乎有点呆
+*那就让它活起来吧
+*/
+@keyframes rotation {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
 }
 
 `;
@@ -70,6 +74,6 @@ let step = () => {
       n += 1;
       step();
     }
-  }, 0);
+  }, 30);
 };
 step();

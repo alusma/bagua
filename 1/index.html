@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS3实现旋转的太极图（二）：只用1个DIV</title>
+    <style>
+      /* 利用background-image实现左黑右白的圆，IE下测试不太理想 */
+      /* .box-taiji {width:400px;height:400px;position:relative;margin:30px auto;border-radius:400px;box-shadow:0 0 30px rgba(0,0,0,.5);background-image:linear-gradient(left, #000 50%, #fff 50%);background-image:-webkit-linear-gradient(left, #000 50%, #fff 50%);background-image:-moz-linear-gradient(left, #000 50%, #fff 50%);}
+.box-taiji:before,
+.box-taiji:after {position:absolute;content:"";display:block;}
+.box-taiji:before {width:200px;height:200px;top:0;left:100px;z-index:1;background-color:#fff;border-radius:50%;box-shadow:0 200px 0 #000;}
+.box-taiji:after {width:60px;height:60px;top:70px;left:170px;z-index:2;background-color:#000;border-radius:50%;box-shadow:0 200px 0 #fff;}
+ */
+
+      .box-taiji {
+        width: 0;
+        height: 400px;
+        position: relative;
+        margin: 50px auto;
+        border-left: 200px solid #000;
+        border-right: 200px solid #fff;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        animation: rotation 2.5s linear infinite;
+        /* -webkit-animation: rotation 2.5s linear infinite;*/
+        /* -moz-animation: rotation 2.5s linear infinite; */
+      }
+      .box-taiji:before,
+      .box-taiji:after {
+        position: absolute;
+        content: "";
+        display: block;
+      }
+      .box-taiji:before {
+        width: 200px;
+        height: 200px;
+        top: 0;
+        left: -100px;
+        z-index: 1;
+        background-color: rgb(238, 235, 68);
+        border-radius: 50%;
+        box-shadow: 0 200px 0 rgb(50, 57, 145);
+      }
+      .box-taiji:after {
+        width: 60px;
+        height: 60px;
+        top: 70px;
+        left: -30px;
+        z-index: 2;
+        background-color: red;
+        border-radius: 50%;
+        box-shadow: 0 200px 0 rgb(30, 194, 112);
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes rotation {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @-moz-keyframes rotation {
+        0% {
+          -moz-transform: rotate(0deg);
+        }
+        100% {
+          -moz-transform: rotate(180deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box-taiji"></div>
+  </body>
+</html>

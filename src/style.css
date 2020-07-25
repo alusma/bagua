@@ -13,32 +13,26 @@
   word-break: break-all;
 }
 #div1 {
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%);
-  top: 20px;
+  position: relative;
+  top: 0px;
+  margin: auto;
+  animation: rotation 2.5s linear infinite;
 }
-#div1::before {
-  content: " ";
-  display: block;
-  position: absolute;
-}
+#div1::before,
 #div1::after {
   content: " ";
   display: block;
   position: absolute;
 }
+
 @media (max-width: 500px) {
   #html {
-    height: 50vh;
+    height: 62vh;
     overflow: auto;
-  }
-  #div1Wrapper {
-    height: 50vh;
   }
   #div1 {
     position: relative;
-    top: 0;
-    right: 0;
+    animation: rotation 2.5s linear infinite;
+    height: auto;
   }
 }
